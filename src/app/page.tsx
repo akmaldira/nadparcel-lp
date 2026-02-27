@@ -15,7 +15,7 @@ const products = [
   {
     id: "custom",
     name: "Custom Order",
-    price: "Rp -",
+    price: "Rp 150.000 +",
     desc: "Parcel kustom yang dirancang sesuai keinginan Anda, kami siap membantu membuat parcel yang unik dan personal.",
     orderText: "Halo NAD Parcel, saya ingin memesan parcel kustom",
   },
