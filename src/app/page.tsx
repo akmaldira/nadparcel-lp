@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import {
   Gift,
   MessageCircle,
@@ -8,8 +8,10 @@ import {
   PackageOpen,
   Sparkles,
   Star,
+  X,
 } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
 
 const products = [
   {
@@ -91,6 +93,8 @@ const usps = [
 const phoneNumber = "6289699060906";
 
 export default function Home() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   const handleOrder = (name: string, price: string, orderText?: string) => {
     const message = orderText
       ? orderText
@@ -222,7 +226,12 @@ export default function Home() {
                 whileHover={{ y: -10 }}
                 className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col group"
               >
-                <div className="relative h-80 w-full overflow-hidden bg-gray-100">
+                <div
+                  className="relative h-80 w-full overflow-hidden bg-gray-100 cursor-pointer"
+                  onClick={() =>
+                    product.image && setSelectedImage(product.image)
+                  }
+                >
                   {product.image ? (
                     <Image
                       src={product.image}
@@ -296,6 +305,43 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Image Preview Dialog */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm cursor-zoom-out"
+          >
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-6 right-6 text-white hover:text-gold-400 transition-colors bg-black/50 p-2 rounded-full"
+            >
+              <X size={32} />
+            </button>
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative w-full max-w-4xl max-h-[90vh] aspect-4/5 md:aspect-square lg:aspect-video rounded-2xl overflow-hidden shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={selectedImage}
+                alt="Preview"
+                fill
+                className="object-contain bg-black/20"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                priority
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </main>
   );
 }
