@@ -36,6 +36,13 @@ const products = [
     desc: "Koleksi sajian favorit yang dikurasi khusus, menghadirkan ragam kelezatan premium untuk memeriahkan suasana.",
   },
   {
+    id: "350k",
+    name: "Moroccan Dining Set",
+    price: "Rp 350.000",
+    image: "/pricelist/Parcel 350k.jpg",
+    desc: "Bingkisan estetik dengan set piring dan mangkuk bermotif mandala yang eksotis, dipadukan dengan ragam kue dan camilan lezat.",
+  },
+  {
     id: "400k",
     name: "The Hostess Set",
     price: "Rp 400.000",
@@ -57,6 +64,20 @@ const products = [
     desc: "Rangkaian parcel mewah yang disempurnakan dengan set perlengkapan makan berdesain modern dan estetis.",
   },
   {
+    id: "600k-2",
+    name: "Classic Gold Tea Set",
+    price: "Rp 600.000",
+    image: "/pricelist/Parcel 600k (2).jpg",
+    desc: "Parcel elegan dalam keranjang rotan yang menampilkan set cangkir teh putih beraksen emas mewah, berpadu dengan kue kering spesial.",
+  },
+  {
+    id: "600k-3",
+    name: "Premium Moroccan Feast",
+    price: "Rp 600.000",
+    image: "/pricelist/Parcel 600k (3).jpg",
+    desc: "Koleksi premium set piring dan mangkuk keramik bermotif eksotis ukuran besar, dilengkapi dengan aneka biskuit dan wafer untuk keluarga.",
+  },
+  {
     id: "650k",
     name: "Grand Celebration",
     price: "Rp 650.000",
@@ -64,11 +85,25 @@ const products = [
     desc: "Bingkisan berskala besar dengan varian sajian terlengkap, dirancang khusus untuk memeriahkan perayaan keluarga.",
   },
   {
+    id: "700k",
+    name: "Emerald Grand Parcel",
+    price: "Rp 700.000",
+    image: "/pricelist/Parcel 700k.jpg",
+    desc: "Parcel menjulang tinggi bernuansa hijau meriah, menyajikan set gelas eksklusif beserta aneka minuman dan camilan berlimpah.",
+  },
+  {
     id: "800k",
     name: "Platinum Tower",
     price: "Rp 800.000",
     image: "/pricelist/Parcel 800k.jpeg",
     desc: "Parcel bersusun megah yang melambangkan kemewahan sejati, persembahan paling prestisius dengan koleksi premium terlengkap.",
+  },
+  {
+    id: "1200k",
+    name: "The Sultan's Tower",
+    price: "Rp 1.200.000",
+    image: "/pricelist/Parcel 1.200k.jpg",
+    desc: "Persembahan termegah setinggi menara yang memadukan set cangkir klasik, nampan emas, sirup legendaris, dan sajian premium terlengkap.",
   },
 ];
 
